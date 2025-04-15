@@ -26,3 +26,5 @@ for layer in base_model.layers:
 model.compile(optimizer=Adam(learning_rate=0.0001), loss='binary_crossentropy', metrics=['accuracy'])
 
 model.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=5, batch_size=32)
+print("Model training complete!")
+model.save('base_model.h5')
